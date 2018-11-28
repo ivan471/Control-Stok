@@ -1,0 +1,29 @@
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control_Stok.Form1.resources
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control_Stok.FormLaporanKondisiStok.resources
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control_Stok.FormLaporanStokKeluar.resources
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control_Stok.FormLaporanStok.resources
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control_Stok.FormLaporanStokMasuk.resources
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control_Stok.FormPenginputanStokMasuk.resources
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control_Stok.FormUtama.resources
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control_Stok.FormDaftarStok.resources
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control_Stok.FormDetailStok.resources
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control_Stok.FormInfoMasaKadaluasrsa.resources
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control_Stok.FormKondisiStok.resources
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control_Stok.FormPenginputanStokKeluar.resources
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control_Stok.FormPilihItem.resources
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control_Stok.Resources.resources
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control Stok.vbproj.GenerateResource.Cache
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\bin\Debug\Control Stok.exe.config
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\bin\Debug\Control Stok.exe.manifest
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\bin\Debug\Control Stok.application
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\bin\Debug\Control Stok.exe
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\bin\Debug\Control Stok.pdb
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\bin\Debug\Control Stok.xml
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\bin\Debug\MySql.Data.dll
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control Stok.TrustInfo.xml
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control Stok.exe.manifest
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control Stok.application
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control Stok.exe
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control Stok.xml
+C:\Users\USER\Documents\Visual Studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control Stok.pdb
+C:\Users\USER\documents\visual studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control Stok.vbprojResolveAssemblyReference.cache
