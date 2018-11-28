@@ -42,21 +42,19 @@ Public Class FormDaftarStok
             With DataGridView1
                 baris = .CurrentRow.Index
                 TextBox1.Text = .Item(0, baris).Value
+                TextBox2.Text = .Item(3, baris).Value
             End With
             Button1.Enabled = True
         End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If TextBox1.Text = "" Then
-
+        If TextBox2.Text = "0" Then
+            MsgBox("Data Stock Masih Kosong. Silakan Pilih Barang Lain", MsgBoxStyle.Information, "Information")
         Else
             FormDetailStok.TextBox1.Text = TextBox1.Text
             FormDetailStok.ShowDialog()
         End If
     End Sub
 
-    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-
-    End Sub
 End Class

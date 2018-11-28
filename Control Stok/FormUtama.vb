@@ -39,8 +39,9 @@
     End Sub
 
     Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
-        Form1.TextBox1.Text = "2"
-        Form1.ShowDialog()
+        'Form1.TextBox1.Text = "2"
+        'Form1.ShowDialog()
+        FormLaporanStokKeluar.ShowDialog()
     End Sub
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
