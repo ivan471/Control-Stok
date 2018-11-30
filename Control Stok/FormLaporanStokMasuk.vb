@@ -2,11 +2,6 @@
 Imports MySql.Data.MySqlClient
 Public Class FormLaporanStokMasuk
 
-
-    Private Sub LaporanStokMasuk3_InitReport(sender As Object, e As EventArgs)
-
-    End Sub
-
     Private Sub CrystalReportViewer1_Load(sender As Object, e As EventArgs)
 
     End Sub

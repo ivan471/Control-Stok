@@ -1,7 +1,6 @@
 ﻿Imports System.Data
 Imports MySql.Data.MySqlClient
 Module ModuleControlStok
-    'Public connect As String = "server=sql12.freemysqlhosting.net;user=sql12265442;password=zLdHNiHtEM;database=sql12265442"
     Public connect As String = "server=localhost;user=root;database=controlstok"
     Public hubung As MySqlConnection = New MySqlConnection(connect)
     Public mda As MySqlDataAdapter
@@ -26,7 +25,6 @@ Module ModuleControlStok
     Sub simpandata(ByVal sqlisi As String)
         Try
             Call koneksi()
-            'Dim sqlquery As New Odbc.OdbcCommand
             Using cmd As New MySqlCommand
 
                 cmd.CommandText = sqlisi

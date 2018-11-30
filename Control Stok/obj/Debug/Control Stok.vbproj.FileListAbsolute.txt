@@ -6,7 +6,6 @@ C:\Users\USER\documents\visual studio 2013\Projects\Control Stok\Control Stok\bi
 C:\Users\USER\documents\visual studio 2013\Projects\Control Stok\Control Stok\bin\Debug\Control Stok.xml
 C:\Users\USER\documents\visual studio 2013\Projects\Control Stok\Control Stok\bin\Debug\MySql.Data.dll
 C:\Users\USER\documents\visual studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control Stok.vbprojResolveAssemblyReference.cache
-C:\Users\USER\documents\visual studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control_Stok.Form1.resources
 C:\Users\USER\documents\visual studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control_Stok.FormLaporanKondisiStok.resources
 C:\Users\USER\documents\visual studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control_Stok.FormLaporanStokKeluar.resources
 C:\Users\USER\documents\visual studio 2013\Projects\Control Stok\Control Stok\obj\Debug\Control_Stok.FormLaporanStok.resources

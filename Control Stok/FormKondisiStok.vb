@@ -1,6 +1,11 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class FormKondisiStok
     Dim DREADER As MySqlDataReader
+    Sub simpan()
+        Dim tblsimpan As String = "INSERT INTO tb_kondisi(no_masuk,id_barang,jmlh,keterangan,tanggal)" _
+                             & "VALUES('" & TextBox5.Text & "','" & TextBox1.Text & "','" & TextBox3.Text & "','" & RichTextBox1.Text & "','" & TextBox9.Text & "')"
+        Call simpandata(tblsimpan)
+    End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim njum As Integer = Val(txt_jmlh.Text) - Val(TextBox3.Text)
         Dim total As Integer = Val(txtstok.Text) - Val(TextBox3.Text)
@@ -12,9 +17,7 @@ Public Class FormKondisiStok
             Call simpandata(tblupdatedetail)
             Dim tblupdate As String = "Update tb_stok set Jumlah = " & total & ", status = '" & TextBox9.Text & "' where id_barang = '" & TextBox1.Text & "'"
             Call simpandata(tblupdate)
-            Dim tblsimpan As String = "INSERT INTO tb_kondisi(no_masuk,id_barang,jmlh,keterangan,tanggal)" _
-                                 & "VALUES('" & TextBox5.Text & "','" & TextBox1.Text & "','" & TextBox3.Text & "','" & RichTextBox1.Text & "','" & TextBox3.Text & "')"
-            Call simpandata(tblsimpan)
+            simpan()
             Me.Close()
         ElseIf njum > txt_max.Text Then
             txt_status.Text = "Kebanyakan"
@@ -22,9 +25,7 @@ Public Class FormKondisiStok
             Call simpandata(tblupdatedetail)
             Dim tblupdate As String = "Update tb_stok set Jumlah = " & total & ", status = '" & TextBox9.Text & "' where id_barang = '" & TextBox1.Text & "'"
             Call simpandata(tblupdate)
-            Dim tblsimpan As String = "INSERT INTO tb_kondisi(no_masuk,id_barang,jmlh,keterangan,tanggal)" _
-                                 & "VALUES('" & TextBox5.Text & "','" & TextBox1.Text & "','" & TextBox3.Text & "','" & RichTextBox1.Text & "','" & TextBox3.Text & "')"
-            Call simpandata(tblsimpan)
+            simpan()
             Me.Close()
         Else
             txt_status.Text = "Mencukupi"
@@ -32,9 +33,7 @@ Public Class FormKondisiStok
             Call simpandata(tblupdatedetail)
             Dim tblupdate As String = "Update tb_stok set Jumlah = " & total & ", status = '" & TextBox9.Text & "' where id_barang = '" & TextBox1.Text & "'"
             Call simpandata(tblupdate)
-            Dim tblsimpan As String = "INSERT INTO tb_kondisi(no_masuk,id_barang,jmlh,keterangan,tanggal)" _
-                                 & "VALUES('" & TextBox5.Text & "','" & TextBox1.Text & "','" & TextBox3.Text & "','" & RichTextBox1.Text & "','" & TextBox3.Text & "')"
-            Call simpandata(tblsimpan)
+            simpan()
             Me.Close()
         End If
     End Sub
@@ -51,24 +50,19 @@ Public Class FormKondisiStok
         RichTextBox1.Enabled = False
     End Sub
     Sub Kodeotomatis()
-        'Call koneksi()
-        Dim date2 As String
-        date2 = Format(Now, "MM")
-        cmd = New MySqlCommand("Select no From tb_kondisi where no in(select max(no) from tb_kondisi) ", hubung)
+        cmd = New MySqlCommand("Select no From tb_kondisi order by no desc ", hubung)
         DREADER = cmd.ExecuteReader
         DREADER.Read()
         If Not DREADER.HasRows Then
-            TextBox6.Text = date2 & "01"
-            DREADER.Close()
+            TextBox6.Text = Format(Today, "yyMM") + "01"
         Else
-            TextBox6.Text = Val(Microsoft.VisualBasic.Right(DREADER.Item("no_masuk").ToString, 4)) + 1
-            If Len(TextBox6.Text) = 1 Then
-                TextBox6.Text = date2 & "00" & TextBox6.Text & ""
-            ElseIf Len(TextBox6.Text) = 2 Then
-                TextBox6.Text = date2 & "0" & TextBox6.Text & ""
+            If Microsoft.VisualBasic.Left(DREADER.Item("no"), 4) = Format(Today, "yyMM") Then
+                TextBox6.Text = DREADER.Item("no") + 1
+            Else
+                TextBox6.Text = Format(Today, "yyMM") + "01"
             End If
-            DREADER.Close()
         End If
+        DREADER.Close()
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         FormPilihItem.txtkode.Text = "3"

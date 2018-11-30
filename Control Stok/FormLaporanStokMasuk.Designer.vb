@@ -69,10 +69,10 @@ Partial Class FormLaporanStokMasuk
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
-        Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 104)
+        Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 96)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
         Me.CrystalReportViewer1.ReportSource = Me.LaporanMasuk1
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1165, 625)
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1222, 633)
         Me.CrystalReportViewer1.TabIndex = 0
         Me.CrystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
@@ -94,7 +94,7 @@ Partial Class FormLaporanStokMasuk
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.BackgroundImage = Global.Control_Stok.My.Resources.Resources.umbnail_full08
-        Me.ClientSize = New System.Drawing.Size(1164, 727)
+        Me.ClientSize = New System.Drawing.Size(1221, 727)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DateTimePicker2)

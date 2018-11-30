@@ -62,14 +62,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Control Stok.exe" size="408464">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Control Stok.exe" size="403344">
       <assemblyIdentity name="Control Stok" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>cLzbLwGc9K86kp1pAWZoLa6anwVqcYQSDEEJkc/2mH4=</dsig:DigestValue>
+        <dsig:DigestValue>Vti8g6psRNnjksYN/z8+7qMlRgruSKW8kglA6W/fxK8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
