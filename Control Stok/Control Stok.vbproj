@@ -23,7 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>2</ApplicationRevision>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -92,11 +93,13 @@
       <HintPath>..\..\ControlStock\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -118,10 +121,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormLaporanKondisiStok.Designer.vb">
-      <DependentUpon>FormLaporanKondisiStok.vb</DependentUpon>
+    <Compile Include="Formlaporan.Designer.vb">
+      <DependentUpon>Formlaporan.vb</DependentUpon>
     </Compile>
-    <Compile Include="FormLaporanKondisiStok.vb">
+    <Compile Include="Formlaporan.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLaporanStokKeluar.Designer.vb">
@@ -129,12 +132,6 @@
     </Compile>
     <Compile Include="FormLaporanStokKeluar.vb">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LaporanKondisi.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LaporanKondisi.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="LaporanMasuk.vb">
       <AutoGen>True</AutoGen>
@@ -185,12 +182,6 @@
     <Compile Include="FormDetailStok.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormInfoMasaKadaluasrsa.Designer.vb">
-      <DependentUpon>FormInfoMasaKadaluasrsa.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FormInfoMasaKadaluasrsa.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="FormKondisiStok.Designer.vb">
       <DependentUpon>FormKondisiStok.vb</DependentUpon>
     </Compile>
@@ -233,15 +224,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FormLaporanKondisiStok.resx">
-      <DependentUpon>FormLaporanKondisiStok.vb</DependentUpon>
+    <EmbeddedResource Include="Formlaporan.resx">
+      <DependentUpon>Formlaporan.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLaporanStokKeluar.resx">
       <DependentUpon>FormLaporanStokKeluar.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LaporanKondisi.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>LaporanKondisi.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="LaporanMasuk.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -268,9 +255,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDetailStok.resx">
       <DependentUpon>FormDetailStok.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormInfoMasaKadaluasrsa.resx">
-      <DependentUpon>FormInfoMasaKadaluasrsa.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormKondisiStok.resx">
       <DependentUpon>FormKondisiStok.vb</DependentUpon>

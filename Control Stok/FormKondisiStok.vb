@@ -1,69 +1,19 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class FormKondisiStok
-    Dim DREADER As MySqlDataReader
-    Sub simpan()
-        Dim tblsimpan As String = "INSERT INTO tb_kondisi(no_masuk,id_barang,jmlh,keterangan,tanggal)" _
-                             & "VALUES('" & TextBox5.Text & "','" & TextBox1.Text & "','" & TextBox3.Text & "','" & RichTextBox1.Text & "','" & TextBox9.Text & "')"
-        Call simpandata(tblsimpan)
-    End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim njum As Integer = Val(txt_jmlh.Text) - Val(TextBox3.Text)
-        Dim total As Integer = Val(txtstok.Text) - Val(TextBox3.Text)
-        If TextBox1.Text = "" Or TextBox2.Text = "" Or TextBox3.Text = "" Then
+        If TextBox1.Text = "" Or TextBox4.Text = "" Or TextBox5.Text = "" Then
             MsgBox("Data belum lengkap, Pastikan Semua form terisi")
-        ElseIf njum < txt_min.Text Then
-            txt_status.Text = "Kekurangan"
-            Dim tblupdatedetail As String = "Update tb_stok_detail set jumlah_brg = " & njum & " where no_masuk = '" & TextBox5.Text & "'"
-            Call simpandata(tblupdatedetail)
-            Dim tblupdate As String = "Update tb_stok set Jumlah = " & total & ", status = '" & TextBox9.Text & "' where id_barang = '" & TextBox1.Text & "'"
-            Call simpandata(tblupdate)
-            simpan()
-            Me.Close()
-        ElseIf njum > txt_max.Text Then
-            txt_status.Text = "Kebanyakan"
-            Dim tblupdatedetail As String = "Update tb_stok_detail set jumlah_brg = " & njum & " where no_masuk = '" & TextBox5.Text & "'"
-            Call simpandata(tblupdatedetail)
-            Dim tblupdate As String = "Update tb_stok set Jumlah = " & total & ", status = '" & TextBox9.Text & "' where id_barang = '" & TextBox1.Text & "'"
-            Call simpandata(tblupdate)
-            simpan()
-            Me.Close()
         Else
-            txt_status.Text = "Mencukupi"
-            Dim tblupdatedetail As String = "Update tb_stok_detail set jumlah_brg = " & njum & " where no_masuk = '" & TextBox5.Text & "'"
-            Call simpandata(tblupdatedetail)
-            Dim tblupdate As String = "Update tb_stok set Jumlah = " & total & ", status = '" & TextBox9.Text & "' where id_barang = '" & TextBox1.Text & "'"
-            Call simpandata(tblupdate)
-            simpan()
+            Dim ubah As String = "Update tb_stok set stok_min='" & TextBox4.Text & "', stok_max = '" & TextBox5.Text & "' where id_barang='" & TextBox1.Text & "'"
+            Call simpandata(ubah)
+            MsgBox("Berhasil Diubah")
             Me.Close()
         End If
-    End Sub
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Label7.Text = Format(Now, "dd/MM/yyyy")
-        TextBox9.Text = Format(Now, "yyyy/MM/dd")
     End Sub
     Private Sub FormKondisiStok_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call koneksi()
-        Kodeotomatis()
-        Timer1.Enabled = True
-        Button1.Enabled = False
-        TextBox3.Enabled = False
-        RichTextBox1.Enabled = False
     End Sub
-    Sub Kodeotomatis()
-        cmd = New MySqlCommand("Select no From tb_kondisi order by no desc ", hubung)
-        DREADER = cmd.ExecuteReader
-        DREADER.Read()
-        If Not DREADER.HasRows Then
-            TextBox6.Text = Format(Today, "yyMM") + "01"
-        Else
-            If Microsoft.VisualBasic.Left(DREADER.Item("no"), 4) = Format(Today, "yyMM") Then
-                TextBox6.Text = DREADER.Item("no") + 1
-            Else
-                TextBox6.Text = Format(Today, "yyMM") + "01"
-            End If
-        End If
-        DREADER.Close()
-    End Sub
+    
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         FormPilihItem.txtkode.Text = "3"
         FormPilihItem.Show()
@@ -71,11 +21,14 @@ Public Class FormKondisiStok
     Private Sub Button3_Click(sender As Object, e As EventArgs)
         Me.Close()
     End Sub
-    Private Sub TextBox3_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TextBox3.KeyPress
+    Private Sub TextBox3_KeyPress(sender As Object, e As KeyPressEventArgs)
         If Asc(e.KeyChar) <> 13 AndAlso Asc(e.KeyChar) <> 8 AndAlso Not IsNumeric(e.KeyChar) Then
             MsgBox("Hanya Boleh Angka Yang Diisi !!!", MsgBoxStyle.Information, "Peringatan")
             e.Handled = True
         End If
     End Sub
 
+    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles Button3.Click
+        Me.Close()
+    End Sub
 End Class

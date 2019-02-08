@@ -2,11 +2,30 @@
 Imports MySql.Data.MySqlClient
 Public Class FormDaftarStok
 
+    Private Sub FormDaftarStok_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        ComboBox1.Items.Clear()
+    End Sub
+    Sub seleksi()
+        Dim strtext As String = "SELECT * FROM tb_stok WHERE nama_barang like '%" & TextBox3.Text & "%'"
+        Using cmd As New MySqlCommand(strtext, hubung)
+            Using adapter As New MySqlDataAdapter(cmd)
+                Using DataSet As New DataSet()
+                    adapter.Fill(DataSet)
+                    DataGridView1.DataSource = DataSet.Tables(0)
+                    DataGridView1.ReadOnly = True
+                End Using
+            End Using
+        End Using
+    End Sub
+
     Private Sub FormDaftarStok_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call koneksi()
         Call isigrid()
         Call judulgrid()
         Button1.Enabled = False
+        ComboBox1.Items.Add("Kosong")
+        ComboBox1.Items.Add("Mencukupi")
+        ComboBox1.Items.Add("Kebanyakan")
     End Sub
     Sub judulgrid()
         If DataGridView1.RowCount > 0 Then
@@ -57,4 +76,24 @@ Public Class FormDaftarStok
         End If
     End Sub
 
+    Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
+
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        Dim strtext As String = "SELECT * FROM tb_stok WHERE status like '%" & ComboBox1.Text & "%'"
+        Using cmd As New MySqlCommand(strtext, hubung)
+            Using adapter As New MySqlDataAdapter(cmd)
+                Using DataSet As New DataSet()
+                    adapter.Fill(DataSet)
+                    DataGridView1.DataSource = DataSet.Tables(0)
+                    DataGridView1.ReadOnly = True
+                End Using
+            End Using
+        End Using
+    End Sub
+
+    Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles TextBox3.TextChanged
+        Call seleksi()
+    End Sub
 End Class
